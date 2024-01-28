@@ -5,7 +5,9 @@ body {
 	gap: 50px;
 }
 
-.section {}
+#drone {
+	align-self: end;
+}
 
 /* The switch - the box around the slider */
 .switch {
@@ -125,4 +127,8 @@ input:checked+.slider:before {
 
 .functions .container {
 	display: flex;
+}
+
+img {
+	width: 300px;
 }
