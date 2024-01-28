@@ -1,12 +1,29 @@
 body {
 	font-family: sans-serif;
-	padding: 3em;
+	padding: 2em;
+	margin: 2em;
+}
+
+.panel {
 	display: flex;
 	gap: 50px;
+	padding: 2em;
+	border-radius: 10px;
+	border: solid 1px rgb(172, 169, 169);
+	background-image: url("/images/paul-trienekens-9goYHROaqMo-unsplash.jpg");
+	background-size: cover;
+
 }
+
+h1,
+h2 {
+	color: antiquewhite;
+}
+
 
 #drone {
 	align-self: end;
+
 
 }
 
@@ -80,6 +97,12 @@ input:checked+.slider:before {
 }
 
 .power,
+.functions,
+.specs {
+	filter: drop-shadow(0 0 0.75rem rgb(24, 22, 22));
+}
+
+.power,
 .functions {
 	gap: 15px;
 	background-color: rgb(234, 235, 234);
@@ -136,5 +159,5 @@ img {
 
 .drone {
 	transition: all .7s ease-in-out .15s;
-	/* transform: translateY(-500px); */
+	filter: drop-shadow(0 0 0.75rem rgb(24, 22, 22));
 }
