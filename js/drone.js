@@ -163,12 +163,15 @@ function toggle0() {
   ignitionToggled = !ignitionToggled;
   var igniteStatus = document.querySelector("#ignition");
   var status;
+  var takeOff = document.querySelector(".drone");
   if (ignitionToggled) {
     status = "ON";
     igniteStatus.style.color = "green";
+    takeOff.style.transform = "translate(0,-500px)";
   } else {
     status = "OFF";
     igniteStatus.style.color = "red";
+    takeOff.style.transform = "translate(0,0)";
   }
   igniteStatus.innerHTML = status;
 }

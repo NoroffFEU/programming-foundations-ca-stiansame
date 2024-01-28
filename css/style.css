@@ -7,6 +7,7 @@ body {
 
 #drone {
 	align-self: end;
+
 }
 
 /* The switch - the box around the slider */
@@ -131,4 +132,9 @@ input:checked+.slider:before {
 
 img {
 	width: 300px;
+}
+
+.drone {
+	transition: all .7s ease-in-out .15s;
+	/* transform: translateY(-500px); */
 }
