@@ -1,4 +1,128 @@
 body {
 	font-family: sans-serif;
-	padding: 1em 3em;
+	padding: 3em;
+	display: flex;
+	gap: 50px;
+}
+
+.section {}
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked+.slider {
+	background-color: #2196F3;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.power {
+	display: flex;
+	width: 120px;
+	align-items: center;
+}
+
+.power,
+.functions {
+	gap: 15px;
+	background-color: rgb(234, 235, 234);
+	border-radius: 10px;
+	border: solid 1px rgb(172, 169, 169);
+	padding: 10px;
+}
+
+.specs {
+	background-color: rgb(234, 235, 234);
+	border-radius: 10px;
+	border: solid 1px rgb(172, 169, 169);
+	padding: 10px;
+	width: 300px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 200;
+	font-size: 1.5em;
+}
+
+#ignition {
+	width: 40px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 500;
+	font-size: 1.5em;
+	color: red;
+}
+
+.functions {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+
+}
+
+.functions .function1,
+.functions .function2,
+.functions .function3,
+.functions .function4,
+.functions .function5 {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 500;
+	font-size: 1.5em;
+	color: red;
+	width: 220px;
+}
+
+.functions .container {
+	display: flex;
 }

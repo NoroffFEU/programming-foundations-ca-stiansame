@@ -10,24 +10,31 @@
 </head>
 
 <body>
-    <h1>My drone!</h1>
-    <div class="specs">
+    <section>
+        <h1>My drone - super simple GUI!</h1>
         <h2>SPECS</h2>
-        <p id="make"><b>Brand:</b></p>
-        <p id="model"><b>Model:</b></p>
-        <p id="motors"><b>Rotors:</b></p>
-        <p id="speed"><b>Max Speed:</b></p>
-        <p id="range"><b>Max Range:</b></p>
-        <p id="battery"><b>Max Flytime:</b></p>
-    </div>
-    <div class="functions">
+        <div class="specs">
+
+            <p id="make"><b>Brand: </b></p>
+            <p id="model"><b>Model: </b></p>
+            <p id="motors"><b>Rotors: </b></p>
+            <p id="speed"><b>Max Speed: </b></p>
+            <p id="range"><b>Max Range: </b></p>
+            <p id="battery"><b>Max Flytime </b></p>
+        </div>
         <h2>Functions</h2>
-        <ul></ul>
-    </div>
-    <div class="power">
+        <div class="functions">
+        </div>
         <h2>Ignition</h2>
-        <button id="ignition"></button>
-    </div>
+        <div class="power">
+
+            <div id="ignition">OFF</div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round" onclick="toggle0()"></span>
+            </label>
+        </div>
+    </section>
     <script src="js/drone.js"></script>
 </body>
 

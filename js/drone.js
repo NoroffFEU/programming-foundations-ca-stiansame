@@ -1,9 +1,7 @@
 //Drone as an object
 
 const drone = {
-  startStop: function () {
-    drone.on = !drone.on;
-  },
+  //ignition is moved further down
   brand: {
     name: "Dji",
     origin: "China",
@@ -20,19 +18,19 @@ const drone = {
   functions: [
     {
       name: "gps",
-      active: true,
+      active: false,
     },
     {
       name: "collisionDetection",
-      active: true,
+      active: false,
     },
     {
       name: "gyroscopicStabilizer",
-      active: true,
+      active: false,
     },
     {
       name: "returnHome",
-      active: true,
+      active: false,
     },
     {
       name: "manualOverride",
@@ -41,7 +39,9 @@ const drone = {
   ],
 };
 
-/* //specs
+//--------EVERYTHING BELOW IS JUST TO SHOW FUNCTIONALITY WITH HTML AND CSS----------
+
+//specs
 var make = document.querySelector("#make");
 make.innerHTML += drone.brand.name;
 var make = document.querySelector("#model");
@@ -57,16 +57,118 @@ make.innerHTML += drone.battery + " minutes";
 
 //functions
 
-var functions = document.querySelector("ul");
+var gps = false;
+var collisionDetection = false;
+var gyroscopicStabilizer = false;
+var returnHome = false;
+var manualOverride = false;
+
+var num = 1;
+var numm = 1;
+
+var functions = document.querySelector(".functions");
 for (i = 0; i < drone.functions.length; i++) {
   functions.innerHTML +=
-    "<li>" + "<button>" + drone.functions[i].name + "</button>" + "</li>";
+    "<div class='container'>" +
+    "<div class='function" +
+    numm++ +
+    "'>" +
+    drone.functions[i].name +
+    "</div>" +
+    "<label class='switch'>" +
+    "<input type='checkbox'>" +
+    "<span class='slider round' onclick='toggle" +
+    num++ +
+    "()'>" +
+    "</span>" +
+    "</label>" +
+    "</div>";
+}
+
+//functions toggle
+
+//gps
+
+var gpsToggle = gps.active;
+function toggle1() {
+  gpsToggle = !gpsToggle;
+
+  var gpsStatus = document.querySelector(".function1");
+  if (gpsToggle === true) {
+    gpsStatus.style.color = "green";
+  } else {
+    gpsStatus.style.color = "red";
+  }
+}
+
+//collisionDetection
+
+var colDecToggle = collisionDetection.active;
+function toggle2() {
+  colDecToggle = !colDecToggle;
+
+  var colDecStatus = document.querySelector(".function2");
+  if (colDecToggle === true) {
+    colDecStatus.style.color = "green";
+  } else {
+    colDecStatus.style.color = "red";
+  }
+}
+
+//Stabilizer
+
+var stabToggle = gyroscopicStabilizer.active;
+function toggle3() {
+  stabToggle = !stabToggle;
+
+  var stabStatus = document.querySelector(".function3");
+  if (stabToggle === true) {
+    stabStatus.style.color = "green";
+  } else {
+    stabStatus.style.color = "red";
+  }
+}
+
+//returnHome
+
+var returnToggle = gyroscopicStabilizer.active;
+function toggle4() {
+  returnToggle = !returnToggle;
+
+  var returnStatus = document.querySelector(".function4");
+  if (returnToggle === true) {
+    returnStatus.style.color = "green";
+  } else {
+    returnStatus.style.color = "red";
+  }
+}
+
+//manualOverride
+
+var overrideToggle = gyroscopicStabilizer.active;
+function toggle5() {
+  overrideToggle = !overrideToggle;
+
+  var overrideStatus = document.querySelector(".function5");
+  if (overrideToggle === true) {
+    overrideStatus.style.color = "green";
+  } else {
+    overrideStatus.style.color = "red";
+  }
 }
 
 //ignition
-var ignition = document.querySelector("#ignition");
-if (drone.on === true) {
-  ignition.innerHTML = "Engine is ON";
-} else {
-  ignition.innerHTML = "Engine is OFF";
-} */
+var ignitionToggled = drone.on;
+function toggle0() {
+  ignitionToggled = !ignitionToggled;
+  var igniteStatus = document.querySelector("#ignition");
+  var status;
+  if (ignitionToggled) {
+    status = "ON";
+    igniteStatus.style.color = "green";
+  } else {
+    status = "OFF";
+    igniteStatus.style.color = "red";
+  }
+  igniteStatus.innerHTML = status;
+}
